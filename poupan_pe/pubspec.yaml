@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http:
   hasura_connect: ^2.0.0
+  rx_notifier: ^1.0.0
 
 dev_dependencies:
   flutter_test:

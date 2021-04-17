@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poupan_pe/controller/controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -6,6 +7,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Controller controller;
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
