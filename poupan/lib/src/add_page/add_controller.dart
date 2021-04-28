@@ -21,7 +21,7 @@ class AddController {
         .then(
           (value) {},
         );
-    final snackBar = SnackBar(
+    /*final snackBar = SnackBar(
       content: Text("Seus dados foram salvos !!"),
       action: SnackBarAction(
         label: "Dipensar",
@@ -29,6 +29,6 @@ class AddController {
           ScaffoldMessenger.of(context).hideCurrentSnackBar();
         },
       ),
-    );
+    );*/
   }
 }
