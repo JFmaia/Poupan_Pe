@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poupan/src/add_page/add_page.dart';
 import 'package:poupan/src/home/widgets/app_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,7 +28,14 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purpleAccent,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddPage(),
+            ),
+          );
+        },
         child: Icon(
           Icons.add,
         ),
