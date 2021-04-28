@@ -5,5 +5,9 @@ class HomeController {
   Uri url =
       Uri.https("poupan-ee992-default-rtdb.firebaseio.com", "/compras.json");
 
-  void getCompras() {}
+  List<String> listDeComPras = [];
+
+  Future<void> getCompras() {
+    return http.get(url);
+  }
 }

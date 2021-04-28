@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poupan/src/add_page/add_page.dart';
+import 'package:poupan/src/home/home_controller.dart';
 import 'package:poupan/src/home/widgets/app_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,22 +9,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TextEditingController textController = TextEditingController();
-  TextEditingController valueController = TextEditingController();
+  HomeController controller = HomeController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text("Camisa"),
-              subtitle: Text("500 R\$"),
-            );
-          },
-          itemCount: 20,
+        child: RefreshIndicator(
+          onRefresh: () => controller.getCompras(),
+          child: ListView.builder(
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text("Camisa"),
+                subtitle: Text("500 R\$"),
+              );
+            },
+            itemCount: 20,
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
