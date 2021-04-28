@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poupan/src/add_page/add_page.dart';
-import 'package:poupan/src/home/home_page.dart';
+
+import '../home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Poupan",
-      home: AddPage(),
+      home: HomePage(),
     );
   }
 }

@@ -52,7 +52,7 @@ class _AddPageState extends State<AddPage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        controller.addCompra(textController.value.text,
+                        controller.addCompra(context, textController.value.text,
                             valueController.value.text);
                       },
                       child: Text("Salvar"),
