@@ -23,7 +23,7 @@ class AppBarWidget extends PreferredSize {
                         TextSpan(
                             text: "Olá, seja bem vindo ao ",
                             style: TextStyle(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w200,
                               color: Colors.white,
                               fontSize: 18,
                             ),
@@ -31,9 +31,10 @@ class AppBarWidget extends PreferredSize {
                               TextSpan(
                                 text: "PoupanPE !!",
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                    color: Colors.white),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.greenAccent,
+                                ),
                               ),
                             ]),
                       ),

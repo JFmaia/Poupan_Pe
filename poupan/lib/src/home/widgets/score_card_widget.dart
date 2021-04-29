@@ -10,9 +10,12 @@ class _ScoreCardWidgetState extends State<ScoreCardWidget> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 10),
-      height: 45,
-      width: 45,
-      child: Image.asset("assets/unicorn.png"),
+      height: 150,
+      width: 150,
+      child: Image.asset(
+        "assets/rich.png",
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
