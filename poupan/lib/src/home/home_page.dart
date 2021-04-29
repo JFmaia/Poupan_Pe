@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poupan/src/add_page/add_page.dart';
 import 'package:poupan/src/home/home_controller.dart';
 import 'package:poupan/src/home/widgets/app_bar_widget.dart';
+import 'package:rx_notifier/rx_notifier.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,6 +11,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeController controller = HomeController();
+  @override
+  void initState() {
+    super.initState();
+    controller.getCompras();
+  }
+
+  Future refresh() async {
+    setState(() {
+      controller.getCompras();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +30,19 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
         child: RefreshIndicator(
-          onRefresh: () => controller.getCompras(),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text("Camisa"),
-                subtitle: Text("500 R\$"),
+          onRefresh: () => refresh(),
+          child: RxBuilder(
+            builder: (_) {
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Text(controller.listEvents[index].compra),
+                    subtitle: Text("${controller.listEvents[index].valor} R\$"),
+                  );
+                },
+                itemCount: controller.listEvents.length,
               );
             },
-            itemCount: 20,
           ),
         ),
       ),

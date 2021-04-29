@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poupan/src/add_page/add_controller.dart';
+
+import 'package:poupan/src/home/home_controller.dart';
 
 class AddPage extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class AddPage extends StatefulWidget {
 }
 
 class _AddPageState extends State<AddPage> {
-  AddController controller = AddController();
+  HomeController controller = HomeController();
   TextEditingController textController = TextEditingController();
   TextEditingController valueController = TextEditingController();
   @override
@@ -52,8 +53,10 @@ class _AddPageState extends State<AddPage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        controller.addCompra(context, textController.value.text,
+                        controller.addCompra(textController.value.text,
                             valueController.value.text);
+
+                        Navigator.pop(context);
                       },
                       child: Text("Salvar"),
                     ),
