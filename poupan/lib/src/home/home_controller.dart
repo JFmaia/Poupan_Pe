@@ -49,4 +49,11 @@ class HomeController {
     );
     return Future.value();
   }
+
+  Future deleteCompra(String id) async {
+    Uri url = Uri.https(
+        "poupan-ee992-default-rtdb.firebaseio.com", "/compras/$id.json");
+
+    http.delete(url);
+  }
 }

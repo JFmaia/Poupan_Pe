@@ -38,6 +38,13 @@ class _HomePageState extends State<HomePage> {
                   return ListTile(
                     title: Text(controller.listEvents[index].compra),
                     subtitle: Text("${controller.listEvents[index].valor} R\$"),
+                    trailing: IconButton(
+                      onPressed: () {
+                        controller
+                            .deleteCompra(controller.listEvents[index].id);
+                      },
+                      icon: Icon(Icons.delete_outline_sharp),
+                    ),
                   );
                 },
                 itemCount: controller.listEvents.length,

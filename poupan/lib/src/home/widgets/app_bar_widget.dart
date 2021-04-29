@@ -14,7 +14,7 @@ class AppBarWidget extends PreferredSize {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.purpleAccent,
+                    color: Colors.purple,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
