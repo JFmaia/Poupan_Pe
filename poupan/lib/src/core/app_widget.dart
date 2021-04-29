@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../home/home_page.dart';
+import 'package:poupan/src/splash/splash.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -9,7 +8,7 @@ class AppWidget extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: "Poupan",
-      home: HomePage(),
+      home: Splash(),
     );
   }
 }

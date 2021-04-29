@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poupan/src/add_page/add_page.dart';
 import 'package:poupan/src/home/home_controller.dart';
 import 'package:poupan/src/home/widgets/app_bar_widget.dart';
+import 'package:poupan/src/models/compra.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,7 +44,23 @@ class _HomePageState extends State<HomePage> {
                         controller
                             .deleteCompra(controller.listEvents[index].id);
                       },
-                      icon: Icon(Icons.delete_outline_sharp),
+                      icon: Icon(
+                        Icons.delete_outline_sharp,
+                        color: Colors.greenAccent,
+                      ),
+                    ),
+                    leading: IconButton(
+                      icon: Icon(Icons.edit, color: Colors.greenAccent),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddPage(
+                              compra: controller.listEvents[index],
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   );
                 },
@@ -59,12 +76,15 @@ class _HomePageState extends State<HomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AddPage(),
+              builder: (context) => AddPage(
+                compra: Compra(compra: "", valor: "", id: ""),
+              ),
             ),
           );
         },
         child: Icon(
           Icons.add,
+          color: Colors.greenAccent,
         ),
       ),
     );

@@ -55,5 +55,20 @@ class HomeController {
         "poupan-ee992-default-rtdb.firebaseio.com", "/compras/$id.json");
 
     http.delete(url);
+    return Future.value();
+  }
+
+  Future alterarCompra(String id, String compra, String valor) async {
+    Uri url = Uri.https(
+        "poupan-ee992-default-rtdb.firebaseio.com", "/compras/$id.json");
+
+    http.patch(
+      url,
+      body: jsonEncode({
+        "compra": compra,
+        "valor": valor,
+      }),
+    );
+    return Future.value();
   }
 }
