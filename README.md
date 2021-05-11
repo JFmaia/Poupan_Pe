@@ -9,3 +9,4 @@ o uso do rxnotifier como gerencia de estado, firebase com back end e arquitetura
 - Datr
 - RXnotifier
 - Firebase
+- MVC
